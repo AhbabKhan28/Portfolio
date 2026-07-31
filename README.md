@@ -19,11 +19,16 @@ The analytics projects themselves live in [`projects/`](projects/) and run end-t
 
 ```
 index.html         # Markup: hero, about, projects, contact
+resume.html        # Printable résumé page (Download/Print to PDF)
 style.css          # Design tokens, layout, animations, responsive rules
-script.js          # Scroll reveal, counters, nav, theme toggle
+script.js          # Scroll reveal, counters, nav, theme toggle, back-to-top
+assets/favicon.svg # Site favicon
 assets/img/        # Project chart thumbnails shown on the site
 projects/          # The data-analytics projects (Python / SQL / Power BI)
 ```
+
+> **Note:** the LinkedIn links in `index.html` (marked `data-linkedin`) and the
+> Education line in `resume.html` are placeholders — drop in your real URL/details.
 
 ## Getting Started
 

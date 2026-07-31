@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Résumé of Mohammad Ahbab Khan — Data Analyst.">
+    <title>Mohammad Ahbab Khan — Résumé</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .resume-wrap { max-width: 860px; margin: 0 auto; padding: 110px 6vw 80px; }
+        .resume-top { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline;
+            justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 18px; }
+        .resume-top h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
+        .resume-role { color: var(--brand-a); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; }
+        .resume-contact { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+        .resume-contact a { color: var(--text-muted); text-decoration: none; }
+        .resume-contact a:hover { color: var(--brand-a); }
+        .resume-section { margin-top: 34px; }
+        .resume-section h2 { font-size: 1.25rem; margin-bottom: 14px;
+            border-left: 3px solid var(--brand-a); padding-left: 10px; }
+        .resume-section ul { margin: 0 0 0 18px; }
+        .resume-section li { margin-bottom: 8px; color: var(--text-muted); }
+        .resume-section li strong { color: var(--text); }
+        .resume-skills { display: flex; flex-wrap: wrap; gap: 10px; }
+        .resume-actions { display: flex; gap: 14px; margin-top: 8px; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: #fff; color: #000; }
+            .resume-section li, .resume-contact { color: #333; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled no-print">
+        <a href="index.html" class="nav-logo">Analyst<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">&larr; Back to portfolio</a></li>
+        </ul>
+    </nav>
+
+    <div class="resume-wrap">
+        <header class="resume-top">
+            <div>
+                <h1>Mohammad Ahbab Khan</h1>
+                <div class="resume-role">Data Analyst</div>
+            </div>
+            <div class="resume-contact">
+                <a href="mailto:ahbabkhan2805@gmail.com">ahbabkhan2805@gmail.com</a>
+                <a href="https://github.com/AhbabKhan28" target="_blank" rel="noopener">github.com/AhbabKhan28</a>
+            </div>
+        </header>
+
+        <div class="resume-actions no-print" style="margin-top:24px;">
+            <button class="btn btn-primary" onclick="window.print()">Download / Print PDF</button>
+            <a href="index.html" class="btn btn-ghost">View Projects</a>
+        </div>
+
+        <section class="resume-section">
+            <h2>Summary</h2>
+            <p style="color: var(--text-muted);">
+                Data analyst who turns messy, real-world data into clear, actionable insight.
+                Comfortable across the full analysis workflow — data cleaning and modeling in
+                Python, business querying in SQL, statistical testing, and building
+                decision-ready dashboards in Power BI.
+            </p>
+        </section>
+
+        <section class="resume-section">
+            <h2>Skills</h2>
+            <div class="resume-skills">
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">pandas / NumPy</span>
+                <span class="skill-chip">SQL</span>
+                <span class="skill-chip">Power BI / DAX</span>
+                <span class="skill-chip">Statistics &amp; A/B Testing</span>
+                <span class="skill-chip">Data Visualization</span>
+                <span class="skill-chip">ETL &amp; Data Modeling</span>
+                <span class="skill-chip">Excel</span>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Selected Projects</h2>
+            <ul>
+                <li><strong>Retail Sales Analytics</strong> — Star-schema EDA over 60k orders (Python);
+                    6 SQL business queries incl. window functions; Power BI model with DAX measures.</li>
+                <li><strong>A/B Test Analysis</strong> — Two-proportion z-test on a landing-page
+                    experiment with a 95% confidence interval and a data-driven ship decision.</li>
+                <li><strong>Marketing Cohort Retention</strong> — Monthly cohort retention matrix and
+                    heatmap, computed identically in pandas and SQL as a cross-check.</li>
+                <li><strong>European Bank Churn Analytics</strong> — Interactive dashboard on retail-bank
+                    churn (20.4% baseline, €185.6M balance at risk) with segment &amp; geographic views.</li>
+            </ul>
+        </section>
+
+        <section class="resume-section">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>Add your degree / institution here.</strong></li>
+            </ul>
+        </section>
+    </div>
+
+    <script>document.documentElement.setAttribute('data-theme',
+        localStorage.getItem('theme') || 'dark');</script>
+</body>
+</html>

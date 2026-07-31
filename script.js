@@ -43,20 +43,41 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach((el) => counterObserver.observe(el));
 
-// ===== Navbar scroll state + scroll progress bar =====
+// ===== Navbar scroll state + scroll progress bar + back-to-top + active nav =====
 const navbar = document.getElementById('navbar');
 const progressBar = document.getElementById('scrollProgress');
+const backToTop = document.getElementById('backToTop');
+
+const sections = ['home', 'about', 'work', 'contact']
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+const navAnchors = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
 
 const onScroll = () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    const y = window.scrollY;
+    navbar.classList.toggle('scrolled', y > 40);
+    backToTop.classList.toggle('visible', y > 500);
 
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    const pct = scrollable > 0 ? (y / scrollable) * 100 : 0;
     progressBar.style.width = pct + '%';
+
+    // Highlight the nav link for the section currently in view.
+    const marker = y + window.innerHeight * 0.35;
+    let currentId = sections.length ? sections[0].id : null;
+    for (const sec of sections) {
+        if (sec.offsetTop <= marker) currentId = sec.id;
+    }
+    navAnchors.forEach((a) =>
+        a.classList.toggle('active', a.getAttribute('href') === `#${currentId}`));
 };
 
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 // ===== Mobile navigation toggle =====
 const navToggle = document.getElementById('navToggle');

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A/B Test Analysis — hypothesis testing on conversion with Python and SciPy.">
+    <title>A/B Test Analysis — Project</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar scrolled">
+        <a href="index.html" class="nav-logo">Analyst<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html#work">&larr; All projects</a></li>
+            <li>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="detail-hero">
+        <div class="hero-bg"></div>
+        <p class="detail-eyebrow">Data Analysis Project</p>
+        <h1>A/B Test Analysis</h1>
+        <p>Does a new landing page actually convert better? A full frequentist analysis that turns an experiment into a confident, data-driven ship decision.</p>
+        <div class="detail-badges">
+            <span>Python</span><span>NumPy</span><span>SciPy</span><span>Hypothesis Testing</span><span>Statistics</span>
+        </div>
+    </header>
+
+    <main class="detail-wrap">
+        <section class="detail-section">
+            <h2>Overview</h2>
+            <p>Two groups of 12,000 users each — control (old page) and treatment (new page) — are compared
+            on conversion rate. The analysis doesn't just report which number is bigger; it quantifies whether
+            the difference is <strong>statistically significant</strong> and how large the true effect is likely to be.</p>
+        </section>
+
+        <section class="detail-section">
+            <h2>Key Results</h2>
+            <div class="kpi-row">
+                <div class="kpi"><b>12.18%</b><span>Control conversion</span></div>
+                <div class="kpi"><b>13.29%</b><span>Treatment conversion</span></div>
+                <div class="kpi"><b>+9.1%</b><span>Relative lift</span></div>
+                <div class="kpi"><b>p = 0.010</b><span>Significant at α=0.05</span></div>
+            </div>
+            <figure class="detail-figure">
+                <img src="assets/img/ab-test.png" alt="Conversion rate by group bar chart">
+                <figcaption>Treatment beats control by +1.11 percentage points; the 95% CI for the difference is [+0.27pp, +1.95pp] — entirely positive.</figcaption>
+            </figure>
+        </section>
+
+        <section class="detail-section">
+            <h2>Approach</h2>
+            <ul>
+                <li><strong>Simulate</strong> a two-group experiment from a known ground truth (reproducible seed).</li>
+                <li><strong>Two-proportion z-test</strong> using a pooled standard error to compute the z-statistic and p-value.</li>
+                <li><strong>95% confidence interval</strong> for the difference in conversion rates (unpooled SE).</li>
+                <li><strong>Decision rule:</strong> reject H₀ when p &lt; 0.05 → the lift is real and the CI excludes zero, so it's safe to ship.</li>
+            </ul>
+            <div class="code-block">z = (p_t - p_c) / sqrt( p_pool * (1 - p_pool) * (1/n_c + 1/n_t) )<br>
+p_value = 2 * (1 - Φ(|z|))&nbsp;&nbsp;# two-sided</div>
+        </section>
+
+        <section class="detail-section">
+            <h2>Tech Used</h2>
+            <ul>
+                <li><strong>Python</strong> — NumPy for simulation, SciPy for the normal distribution</li>
+                <li><strong>Statistics</strong> — two-proportion z-test, confidence intervals, significance testing</li>
+                <li><strong>matplotlib</strong> — conversion comparison chart</li>
+            </ul>
+        </section>
+
+        <div class="detail-actions">
+            <a href="https://github.com/AhbabKhan28/Portfolio/tree/main/projects/ab-test-analysis" class="btn btn-primary" target="_blank" rel="noopener">View Code</a>
+            <a href="index.html#work" class="btn btn-ghost">Back to Projects</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Mohammad Ahbab Khan. Built with data.</p>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <script src="detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Animated portfolio showcasing striking visual assets, banners, and thumbnails.">
+    <title>My Animated Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="nav-logo">Creator<span>.</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow fade-in-up" style="--delay: 0.1s">Visual Designer &amp; Creator</p>
+            <h1 class="fade-in-up" style="--delay: 0.25s">Hi, I'm a <span class="gradient-text">Creator</span>.</h1>
+            <p class="hero-sub fade-in-up" style="--delay: 0.4s">I design striking visual assets, dynamic banners, and engaging thumbnails that make brands unforgettable.</p>
+            <div class="hero-actions fade-in-up" style="--delay: 0.55s">
+                <a href="#work" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-cue" aria-label="Scroll down">
+            <span class="mouse"></span>
+        </a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-inner">
+            <h2 class="section-title scroll-reveal">About Me</h2>
+            <div class="about-grid">
+                <p class="about-text scroll-reveal" style="--delay: 0.1s">
+                    I'm a visual designer focused on high-impact digital content. From bold thumbnails
+                    to wide-format channel banners, I turn ideas into scroll-stopping graphics that
+                    grow audiences and strengthen brands.
+                </p>
+                <div class="stats">
+                    <div class="stat scroll-reveal" style="--delay: 0.15s">
+                        <span class="stat-num" data-count="250">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat scroll-reveal" style="--delay: 0.25s">
+                        <span class="stat-num" data-count="80">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat scroll-reveal" style="--delay: 0.35s">
+                        <span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills scroll-reveal" style="--delay: 0.2s">
+                <span class="skill-chip">Thumbnail Design</span>
+                <span class="skill-chip">Channel Banners</span>
+                <span class="skill-chip">Brand Identity</span>
+                <span class="skill-chip">Typography</span>
+                <span class="skill-chip">Illustration</span>
+                <span class="skill-chip">Motion Graphics</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="work" class="portfolio">
+        <div class="section-inner">
+            <h2 class="section-title scroll-reveal">Featured Projects</h2>
+
+            <div class="project-grid">
+                <article class="project-card scroll-reveal" style="--delay: 0.1s">
+                    <div class="project-image" style="--accent: #ff4757;">
+                        <span>Thumbnail Design</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Alpha</h3>
+                        <p>High-impact visual design for digital content.</p>
+                        <a href="#" class="project-link">View case study &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card scroll-reveal" style="--delay: 0.2s">
+                    <div class="project-image" style="--accent: #2ed573;">
+                        <span>Channel Banner</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Beta</h3>
+                        <p>Wide-format branding and layout design.</p>
+                        <a href="#" class="project-link">View case study &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card scroll-reveal" style="--delay: 0.3s">
+                    <div class="project-image" style="--accent: #1e90ff;">
+                        <span>Graphic Assets</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Gamma</h3>
+                        <p>Custom illustrations and typography.</p>
+                        <a href="#" class="project-link">View case study &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card scroll-reveal" style="--delay: 0.1s">
+                    <div class="project-image" style="--accent: #ffa502;">
+                        <span>Poster Series</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Delta</h3>
+                        <p>Editorial poster layouts with bold typography.</p>
+                        <a href="#" class="project-link">View case study &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card scroll-reveal" style="--delay: 0.2s">
+                    <div class="project-image" style="--accent: #a55eea;">
+                        <span>Motion Reel</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Epsilon</h3>
+                        <p>Animated intros and short-form motion graphics.</p>
+                        <a href="#" class="project-link">View case study &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card scroll-reveal" style="--delay: 0.3s">
+                    <div class="project-image" style="--accent: #ff6b81;">
+                        <span>Brand Kit</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Zeta</h3>
+                        <p>Complete visual identity and asset system.</p>
+                        <a href="#" class="project-link">View case study &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-inner scroll-reveal">
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="contact-sub">Have a project in mind? I'd love to hear about it.</p>
+            <a href="mailto:hello@example.com" class="btn btn-primary">Say Hello</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Creator. Crafted with care.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

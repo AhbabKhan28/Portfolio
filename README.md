@@ -1,6 +1,8 @@
-# Animated Portfolio
+# Data Analyst Portfolio
 
-A modern, dark/light themed portfolio built with plain **HTML, CSS, and JavaScript** — no build step, no dependencies. Designed to showcase visual work like banners and thumbnails.
+A modern, dark/light themed portfolio built with plain **HTML, CSS, and JavaScript** — no build step, no dependencies. It showcases data-analytics work built with **Python, SQL, and Power BI**.
+
+The analytics projects themselves live in [`projects/`](projects/) and run end-to-end on synthetic (reproducible) data — see [`projects/README.md`](projects/README.md).
 
 ## Features
 
@@ -16,9 +18,11 @@ A modern, dark/light themed portfolio built with plain **HTML, CSS, and JavaScri
 ## Structure
 
 ```
-index.html   # Markup: hero, about, projects, contact
-style.css    # Design tokens, layout, animations, responsive rules
-script.js    # Scroll reveal, counters, nav, theme toggle
+index.html         # Markup: hero, about, projects, contact
+style.css          # Design tokens, layout, animations, responsive rules
+script.js          # Scroll reveal, counters, nav, theme toggle
+assets/img/        # Project chart thumbnails shown on the site
+projects/          # The data-analytics projects (Python / SQL / Power BI)
 ```
 
 ## Getting Started
@@ -34,4 +38,4 @@ python3 -m http.server 8000
 
 - **Content**: edit the sections in `index.html`.
 - **Colors / theme**: tweak the CSS custom properties under `:root` and `[data-theme="light"]` in `style.css`.
-- **Projects**: duplicate a `.project-card` block and set its `--accent` color.
+- **Projects**: duplicate a `.project-card` block and point its `<img>` at a chart in `assets/img/`.

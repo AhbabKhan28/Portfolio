@@ -1,0 +1,5 @@
+# Generated datasets (reproducible via each project's generate_*.py) and DBs.
+*/data/
+*.db
+__pycache__/
+*.pyc

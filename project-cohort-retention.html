@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cohort Retention — monthly retention analysis in Python and SQL.">
+    <title>Cohort Retention — Project</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar scrolled">
+        <a href="index.html" class="nav-logo">Analyst<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html#work">&larr; All projects</a></li>
+            <li>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="detail-hero">
+        <div class="hero-bg"></div>
+        <p class="detail-eyebrow">Data Analysis Project</p>
+        <h1>Marketing Cohort Retention</h1>
+        <p>How sticky is the product, and is it getting stickier? A monthly cohort retention analysis computed two independent ways — pandas and SQL — as a built-in cross-check.</p>
+        <div class="detail-badges">
+            <span>Python</span><span>pandas</span><span>SQL</span><span>SQLite</span><span>Cohort Analysis</span>
+        </div>
+    </header>
+
+    <main class="detail-wrap">
+        <section class="detail-section">
+            <h2>Overview</h2>
+            <p>8,000 users are grouped by their signup month (cohort), then tracked to see what fraction return
+            in each following month. The result is a <strong>retention matrix</strong> — cohorts down the side,
+            months-since-signup across the top — visualized as a heatmap.</p>
+        </section>
+
+        <section class="detail-section">
+            <h2>Key Results</h2>
+            <div class="kpi-row">
+                <div class="kpi"><b>~54%</b><span>Avg month-1 retention</span></div>
+                <div class="kpi"><b>~36%</b><span>Avg month-3 retention</span></div>
+                <div class="kpi"><b>8,000</b><span>Users tracked</span></div>
+                <div class="kpi"><b>12</b><span>Monthly cohorts</span></div>
+            </div>
+            <figure class="detail-figure">
+                <img src="assets/img/cohort-heatmap.png" alt="Cohort retention heatmap">
+                <figcaption>Newer cohorts (2024-08 onward) retain noticeably better at month 1 (61–64% vs ~45% for early-2024) — evidence that onboarding improvements are working.</figcaption>
+            </figure>
+        </section>
+
+        <section class="detail-section">
+            <h2>Approach</h2>
+            <ul>
+                <li><strong>Event log:</strong> simulate signups + monthly return activity with geometric decay and a small cohort-quality trend.</li>
+                <li><strong>Python:</strong> compute months-since-signup per event, divide active users by each cohort's month-0 size, and render a heatmap.</li>
+                <li><strong>SQL:</strong> reproduce the exact same matrix using date arithmetic on <code>YYYY-MM</code> strings and <code>COUNT(DISTINCT user_id)</code>.</li>
+                <li><strong>Cross-check:</strong> the pandas and SQL matrices match cell-for-cell — a reliability check on the logic.</li>
+            </ul>
+            <div class="code-block">retention[cohort][k] = active_users(cohort, month k) / cohort_size(cohort) * 100</div>
+        </section>
+
+        <section class="detail-section">
+            <h2>Tech Used</h2>
+            <ul>
+                <li><strong>Python</strong> — pandas period arithmetic, matplotlib heatmap</li>
+                <li><strong>SQL</strong> — SQLite CTEs, date math, distinct counts</li>
+            </ul>
+        </section>
+
+        <div class="detail-actions">
+            <a href="https://github.com/AhbabKhan28/Portfolio/tree/main/projects/cohort-retention" class="btn btn-primary" target="_blank" rel="noopener">View Code</a>
+            <a href="index.html#work" class="btn btn-ghost">Back to Projects</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Mohammad Ahbab Khan. Built with data.</p>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <script src="detail.js"></script>
+</body>
+</html>
